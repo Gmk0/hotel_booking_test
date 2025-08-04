@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/utils/constants/image_strings.dart';
 import 'package:hotel_booking/features/home/widgets/custom_image.dart';

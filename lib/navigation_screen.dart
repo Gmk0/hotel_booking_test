@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hotel_booking/core/utils/constants/colors.dart';
-import 'package:hotel_booking/features/home/screen/home_view.dart';
-import 'package:hotel_booking/main.dart';
 import 'package:hotel_booking/routes/pages.dart';
 
 class NavigationScreen extends StatefulWidget {
@@ -20,25 +18,13 @@ class _NavigationScreenState extends State<NavigationScreen>
   List barItems = [
     {
       "icon": "assets/icons/search.svg",
-      "page": CongoBnbHomePage(),
+      // "page": CongoBnbHomePage(),
       "label": 'explore',
     },
-    {"icon": "assets/icons/search.svg", "page": Container(), "label": 'Chat'},
-    {
-      "icon": "assets/icons/pin-area.svg",
-      "page": Container(),
-      "label": 'Favoris',
-    },
-    {
-      "icon": "assets/icons/pin-area.svg",
-      "page": Container(),
-      "label": 'booking',
-    },
-    {
-      "icon": "assets/icons/setting.svg",
-      "page": Container(),
-      "label": 'profile',
-    },
+    {"icon": "assets/icons/search.svg", "label": 'Chat'},
+    {"icon": "assets/icons/pin-area.svg", "label": 'Favoris'},
+    {"icon": "assets/icons/pin-area.svg", "label": 'booking'},
+    {"icon": "assets/icons/setting.svg", "label": 'profile'},
   ];
 
   // Créez la clé ici
@@ -126,7 +112,7 @@ class _NavigationScreenState extends State<NavigationScreen>
       onPopInvoked: _systemBackButtonPressed,
       child: Scaffold(
         backgroundColor: CustomColors.scafold,
-        // bottomNavigationBar: getBottomBar(),
+
         body: Stack(
           children: [
             // Contenu de la page active
@@ -171,20 +157,6 @@ class _NavigationScreenState extends State<NavigationScreen>
       ],
     );
   }
-
-  // Widget getBarPage() {
-  //   return IndexedStack(index: activeTabIndex, children: [
-  //     animatedPage(Container()),
-  //     animatedPage(Container()),
-  //     animatedPage(Container()),
-  //     animatedPage(Container()),
-  //     animatedPage(Navigator(
-  //       // key: profileNavigatorKey, // Utilisez la clé passée
-  //       // onGenerateRoute:
-  //       //      AppPages.generateRouteSettingsProfile, // Route par défaut
-  //     ))
-  //   ]);
-  // }
 
   Widget getBottomBar() {
     return Container(

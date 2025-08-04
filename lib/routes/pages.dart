@@ -111,7 +111,7 @@ class AppPages {
             );
           }
           return MaterialPageRoute<void>(
-            builder: (_) => Container(),
+            builder: (_) => NavigationScreen(),
             settings: settings,
           );
         }
@@ -122,7 +122,7 @@ class AppPages {
       }
     }
     return MaterialPageRoute<void>(
-      builder: (_) => Container(),
+      builder: (_) => NavigationScreen(),
       settings: settings,
     );
   }
