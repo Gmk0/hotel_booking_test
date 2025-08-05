@@ -3,13 +3,13 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../core/app_export.dart';
 
-class FavouriteSearchBar extends StatefulWidget {
+class FavorisSearchBar extends StatefulWidget {
   final String? hintText;
   final ValueChanged<String>? onChanged;
   final VoidCallback? onClear;
   final TextEditingController? controller;
 
-  const FavouriteSearchBar({
+  const FavorisSearchBar({
     super.key,
     this.hintText = 'Rechercher dans vos favoris...',
     this.onChanged,
@@ -18,10 +18,10 @@ class FavouriteSearchBar extends StatefulWidget {
   });
 
   @override
-  State<FavouriteSearchBar> createState() => _FavouriteSearchBarState();
+  State<FavorisSearchBar> createState() => _FavorisSearchBarState();
 }
 
-class _FavouriteSearchBarState extends State<FavouriteSearchBar> {
+class _FavorisSearchBarState extends State<FavorisSearchBar> {
   late TextEditingController _controller;
   bool _hasText = false;
 

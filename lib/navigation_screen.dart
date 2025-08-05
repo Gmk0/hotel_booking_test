@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hotel_booking/core/utils/constants/colors.dart';
-import 'package:hotel_booking/features/favourite_screen/favourite_screen.dart';
 import 'package:hotel_booking/routes/pages.dart';
+
+import 'features/favoris/favourite_screen.dart';
 
 class NavigationScreen extends StatefulWidget {
   final int selectedIndex;

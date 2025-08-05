@@ -4,9 +4,8 @@ import 'package:hotel_booking/core/utils/constants/image_strings.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../core/app_export.dart';
-import './widgets/favourite_property_card.dart';
-import './widgets/favourite_search_bar.dart';
-import './widgets/favourite_sort_bottom_sheet.dart';
+import './widgets/favoris_hebergement_card.dart';
+import './widgets/favoris_search_bar.dart';
 
 class FavouriteScreen extends StatefulWidget {
   const FavouriteScreen({super.key});
@@ -24,7 +23,7 @@ class _FavouriteScreenState extends State<FavouriteScreen>
   bool _isEditMode = false;
   bool _isRefreshing = false;
   String _searchQuery = '';
-  SortOption _currentSort = SortOption.recentlyAdded;
+  //SortOption _currentSort = SortOption.recentlyAdded;
   Set<int> _selectedProperties = {};
 
   // données de teste.
@@ -169,7 +168,7 @@ class _FavouriteScreenState extends State<FavouriteScreen>
                 _isEditMode = false;
               });
               Navigator.pop(context);
-              _showSnackBar('hebergement retiré de vos favoris ');
+              _showSnackBar('Hebergement retiré de vos favoris ');
             },
             child: Text('Retirer'),
           ),
@@ -310,7 +309,7 @@ class _FavouriteScreenState extends State<FavouriteScreen>
   Widget _buildSearchAndSort() {
     return Column(
       children: [
-        FavouriteSearchBar(
+        FavorisSearchBar(
           controller: _searchController,
           onChanged: (value) {
             setState(() {
@@ -376,7 +375,7 @@ class _FavouriteScreenState extends State<FavouriteScreen>
         final property = properties[index];
         final propertyId = property['id'] as int;
 
-        return FavouritePropertyCard(
+        return FavorisHebergementCard(
           property: property,
           onTap: () => _navigateToPropertyDetail(property),
           onRemove: () => _removeProperty(propertyId),

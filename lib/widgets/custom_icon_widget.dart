@@ -11,7 +11,7 @@ class CustomIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Map of available icons
+    //icons
     final Map<String, IconData> iconMap = {
       // A
       'abc': Icons.abc,

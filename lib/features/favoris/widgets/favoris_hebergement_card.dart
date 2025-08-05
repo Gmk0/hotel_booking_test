@@ -3,7 +3,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../core/app_export.dart';
 
-class FavouritePropertyCard extends StatelessWidget {
+class FavorisHebergementCard extends StatelessWidget {
   final Map<String, dynamic> property;
   final VoidCallback? onTap;
   final VoidCallback? onRemove;
@@ -11,7 +11,7 @@ class FavouritePropertyCard extends StatelessWidget {
   final bool isSelected;
   final ValueChanged<bool>? onSelectionChanged;
 
-  const FavouritePropertyCard({
+  const FavorisHebergementCard({
     super.key,
     required this.property,
     this.onTap,
