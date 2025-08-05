@@ -11,16 +11,24 @@ import 'package:lucide_icons/lucide_icons.dart';
 
 import 'package:device_preview_plus/device_preview_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sizer/sizer.dart';
 
 void main() async {
   await Global.init();
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => ProviderScope(child: MainApp()), // Wrap your app
+      builder: (context) => ProviderScope(
+        child: Sizer(
+          builder: (context, orientation, deviceType) {
+            return MainApp();
+          },
+        ),
+      ),
     ),
   );
 }
+
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});

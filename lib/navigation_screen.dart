@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hotel_booking/core/utils/constants/colors.dart';
+import 'package:hotel_booking/features/favourite_screen/favourite_screen.dart';
 import 'package:hotel_booking/routes/pages.dart';
 
 class NavigationScreen extends StatefulWidget {
@@ -145,7 +146,7 @@ class _NavigationScreenState extends State<NavigationScreen>
         ),
 
         animatedPage(Container()), // Search
-        animatedPage(Container()), // Nearby
+        animatedPage(FavouriteScreen()), // Nearby
         animatedPage(Container()), // Book
         animatedPage(
           Navigator(
