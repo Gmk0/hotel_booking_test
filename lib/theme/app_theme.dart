@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-/// A class that contains all theme configurations for the booking application.
-/// Implements Contemporary Spatial Minimalism with Trust-Forward Gradient System.
 class AppTheme {
   AppTheme._();
 
-  // Trust-Forward Gradient System Colors
+
   static const Color primaryBlue = Color(0xFF4A90E2);
   static const Color secondaryBlue = Color(0xFF357ABD);
   static const Color accentPurple = Color(0xFF8E44AD);
@@ -24,7 +22,7 @@ class AppTheme {
   // Border and Divider Colors
   static const Color borderSubtle = Color(0xFFE8E8E8);
 
-  // Dark theme variants
+  // Dark theme variations
   static const Color backgroundDark = Color(0xFF121212);
   static const Color surfaceDark = Color(0xFF1E1E1E);
   static const Color cardDark = Color(0xFF2D2D2D);
@@ -36,7 +34,7 @@ class AppTheme {
   static const Color shadowLight = Color(0x0A000000);
   static const Color shadowDark = Color(0x1A000000);
 
-  /// Light theme optimized for mobile booking applications
+
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     colorScheme: ColorScheme(
@@ -320,7 +318,7 @@ class AppTheme {
     dialogTheme: DialogThemeData(backgroundColor: backgroundWhite),
   );
 
-  /// Dark theme for booking applications
+
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     colorScheme: ColorScheme(
@@ -604,7 +602,7 @@ class AppTheme {
     dialogTheme: DialogThemeData(backgroundColor: surfaceDark),
   );
 
-  /// Helper method to build text theme using Inter font family
+
   static TextTheme _buildTextTheme({required bool isLight}) {
     final Color textHigh = isLight ? textPrimary : textPrimaryDark;
     final Color textMedium = isLight ? textSecondary : textSecondaryDark;
