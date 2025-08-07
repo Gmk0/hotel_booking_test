@@ -1,12 +1,11 @@
 import 'dart:convert';
-
-
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hotel_booking/core/utils/constants/api_constants.dart';
 
 
 
-class HiveService {
+class HiveService
+{
   final Box _box =
       Hive.box('app_storage'); // Utilisation de la boîte "app_storage"
 

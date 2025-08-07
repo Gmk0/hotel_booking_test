@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hotel_booking/core/utils/constants/colors.dart';
+import 'package:hotel_booking/features/chats/Chats_feature.dart';
 import 'package:hotel_booking/routes/pages.dart';
 
 import 'features/favoris/favourite_screen.dart';
@@ -146,7 +147,7 @@ class _NavigationScreenState extends State<NavigationScreen>
           ),
         ),
 
-        animatedPage(Container()), // Search
+        animatedPage(ChatListScreen()), // Chat
         animatedPage(FavouriteScreen()), // Nearby
         animatedPage(Container()), // Book
         animatedPage(
@@ -163,7 +164,6 @@ class _NavigationScreenState extends State<NavigationScreen>
   Widget getBottomBar() {
     return Container(
       height: 70,
-
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(124.75),

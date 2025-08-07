@@ -25,7 +25,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
     this.centerTitle = false,
     this.leading,
-    this.searchHint = 'Search properties...',
+    this.searchHint = 'Recherche hebergement...',
     this.searchController,
     this.onSearchChanged,
     this.onSearchSubmitted,
