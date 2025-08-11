@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/features/profile/screens/SettingsScreen.dart';
 import 'package:hotel_booking/features/profile/widgets/MenuItem.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -139,15 +140,31 @@ class ProfileScreen extends StatelessWidget {
                     const SizedBox(height: 20),
 
                     // Menu items
-                    MenuItem(icon: Icons.settings_outlined, title: "Paramètres du compte"),
-                    MenuItem(icon: Icons.help_outline, title: "Obtenir de l'aide"),
-                    MenuItem(icon: Icons.person_outline, title: "Voir le profil"),
-                    MenuItem(icon: Icons.pan_tool_alt_outlined, title: "Confidentialité"),
+                    MenuItem(icon: Icons.settings_outlined, title: "Paramètres du compte",onClick: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
+                    },),
+                    MenuItem(icon: Icons.help_outline, title: "Obtenir de l'aide",onClick: (){
+
+                    },),
+                    MenuItem(icon: Icons.person_outline, title: "Voir le profil",onClick: (){
+
+                    },),
+                    MenuItem(icon: Icons.pan_tool_alt_outlined, title: "Confidentialité",onClick: (){
+
+                    },),
                     const Divider(height: 24, thickness: 1, color: Color(0xFFE0E0E0)),
-                    MenuItem(icon: Icons.group_outlined, title: "Parrainer un hôte"),
-                    MenuItem(icon: Icons.group_add_outlined, title: "Trouver un co-hôte"),
-                    MenuItem(icon: Icons.menu_book_outlined, title: "Juridique"),
-                    MenuItem(icon: Icons.logout, title: "Déconnexion"),
+                    MenuItem(icon: Icons.group_outlined, title: "Parrainer un hôte",onClick: (){
+
+                    },),
+                    MenuItem(icon: Icons.group_add_outlined, title: "Trouver un co-hôte",onClick: (){
+
+                    },),
+                    MenuItem(icon: Icons.menu_book_outlined, title: "Juridique",onClick: (){
+
+                    },),
+                    MenuItem(icon: Icons.logout, title: "Déconnexion",onClick: (){
+
+                    },),
 
                   ],
                 ),
