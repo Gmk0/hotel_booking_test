@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class TopTitle extends StatelessWidget {
   final String title;
 
-  TopTitle({required this.title});
+  const TopTitle({required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // circular back button
+        // circle back button
         GestureDetector(
           onTap: () => Navigator.maybePop(context),
           child: Container(
@@ -35,7 +35,6 @@ class TopTitle extends StatelessWidget {
 
         const SizedBox(width: 18),
 
-        // Big two-line title (match screenshot scale)
         Expanded(
           child: Text(
             title,

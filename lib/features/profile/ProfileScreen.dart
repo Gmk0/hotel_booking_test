@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/features/profile/screens/ObtenirAideScreen.dart';
 import 'package:hotel_booking/features/profile/screens/SettingsScreen.dart';
 import 'package:hotel_booking/features/profile/widgets/MenuItem.dart';
 
@@ -144,7 +145,7 @@ class ProfileScreen extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
                     },),
                     MenuItem(icon: Icons.help_outline, title: "Obtenir de l'aide",onClick: (){
-
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ObtenirAideScreen()));
                     },),
                     MenuItem(icon: Icons.person_outline, title: "Voir le profil",onClick: (){
 
