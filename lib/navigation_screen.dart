@@ -6,6 +6,7 @@ import 'package:hotel_booking/features/chats/Chats_feature.dart';
 import 'package:hotel_booking/routes/pages.dart';
 
 import 'features/favoris/favourite_screen.dart';
+import 'features/profile/ProfileScreen.dart';
 
 class NavigationScreen extends StatefulWidget {
   final int selectedIndex;
@@ -151,11 +152,7 @@ class _NavigationScreenState extends State<NavigationScreen>
         animatedPage(FavouriteScreen()), // Nearby
         animatedPage(Container()), // Book
         animatedPage(
-          Navigator(
-            key: profileNavigatorKey,
-            onGenerateRoute:
-                AppPages.generateRouteSettingsProfile, // Route par défaut,
-          ),
+          ProfileScreen()
         ),
       ],
     );
