@@ -39,7 +39,7 @@ class TopTitle extends StatelessWidget {
           child: Text(
             title,
             style: const TextStyle(
-              fontSize: 34,
+              fontSize: 20,
               height: 1.03,
               fontWeight: FontWeight.w800,
               color: Colors.black87,
