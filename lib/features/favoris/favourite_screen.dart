@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hotel_booking/core/utils/constants/image_strings.dart';
+import 'package:hotel_booking/widgets/Screen.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../core/app_export.dart';
@@ -23,7 +24,6 @@ class _FavouriteScreenState extends State<FavouriteScreen>
   bool _isEditMode = false;
   bool _isRefreshing = false;
   String _searchQuery = '';
-  //SortOption _currentSort = SortOption.recentlyAdded;
   Set<int> _selectedProperties = {};
 
   // données de teste.
@@ -246,7 +246,6 @@ class _FavouriteScreenState extends State<FavouriteScreen>
    */
   void _navigateToPropertyDetail(Map<String, dynamic> property)
   {
-    //TODO: Mr.Georges ! Ici tu peux ajouter ton code pour naviguer vers l'ecran de visualisation d'un hebergement specific en detail.
   }
 
   @override
@@ -254,7 +253,7 @@ class _FavouriteScreenState extends State<FavouriteScreen>
     return Scaffold(
       backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
       appBar: _buildAppBar(),
-      body: _buildBody(),
+      body: Screen(body: _buildBody()),
     );
   }
 

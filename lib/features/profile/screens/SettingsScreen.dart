@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/features/profile/widgets/MenuDivider.dart';
 import 'package:hotel_booking/features/profile/widgets/MenuSection.dart';
+import 'package:hotel_booking/widgets/Screen.dart';
 
 import '../widgets/MenuItem.dart';
 import '../widgets/TopTitle.dart';
@@ -14,9 +15,8 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _bg,
-      body: Padding(
-          padding: EdgeInsets.only(left: 10,right: 10),
-          child: SafeArea(
+      body: Screen(
+            body: SafeArea(
             child: Column(
               children: [
                 const SizedBox(height: 18),

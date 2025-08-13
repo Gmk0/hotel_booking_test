@@ -3,6 +3,8 @@ import 'package:hotel_booking/features/profile/screens/ObtenirAideScreen.dart';
 import 'package:hotel_booking/features/profile/screens/SettingsScreen.dart';
 import 'package:hotel_booking/features/profile/widgets/MenuItem.dart';
 
+import '../../widgets/Screen.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -10,9 +12,8 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-          padding: EdgeInsets.only(bottom: 50),
-          child: SafeArea(
+      body: Screen(
+          body: SafeArea(
             child: Column(
               children: [
                 Expanded(
