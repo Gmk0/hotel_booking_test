@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hotel_booking/core/utils/constants/colors.dart';
-import 'package:hotel_booking/features/bookings_screen/bookings_screen.dart';
 import 'package:hotel_booking/features/chats/Chats_feature.dart';
 import 'package:hotel_booking/routes/pages.dart';
 
+import 'features/bookings/bookings_screen.dart';
 import 'features/favoris/favourite_screen.dart';
 import 'features/profile/ProfileScreen.dart';
 
