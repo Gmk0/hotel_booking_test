@@ -249,9 +249,6 @@ class _BookingsScreenState extends State<BookingsScreen>
       _isRefreshing = true;
     });
 
-    // Simulate API call
-    //await Future.delayed(Duration(seconds: 1));
-
     setState(() {
       _isRefreshing = false;
     });
