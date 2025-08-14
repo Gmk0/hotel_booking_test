@@ -9,7 +9,7 @@ class Screen extends StatelessWidget
   double paddingLeft = 0;
   double paddingRight = 0;
 
-  Screen({required this.body, this.paddingTop = 0, this.paddingBottom = 0, this.paddingLeft = 0, this.paddingRight = 0});
+  Screen({required this.body, this.paddingTop = 0, this.paddingBottom = 50, this.paddingLeft = 0, this.paddingRight = 0});
 
   @override
   Widget build(BuildContext context)

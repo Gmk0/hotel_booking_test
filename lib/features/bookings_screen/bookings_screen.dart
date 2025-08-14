@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hotel_booking/widgets/Screen.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../core/app_export.dart';
@@ -159,22 +160,24 @@ class _BookingsScreenState extends State<BookingsScreen>
           SizedBox(width: 2.w),
         ],
       ),
-      body: RefreshIndicator(
-        onRefresh: _handleRefresh,
-        child: Column(
-          children: [
-            SizedBox(height: 2.h),
-            BookingFilterTabsWidget(
-              selectedIndex: _selectedTabIndex,
-              onTabChanged: _onTabChanged,
-              tabs: _filterTabs,
+      body:Screen(
+          body:  RefreshIndicator(
+            onRefresh: _handleRefresh,
+            child: Column(
+              children: [
+                SizedBox(height: 2.h),
+                BookingFilterTabsWidget(
+                  selectedIndex: _selectedTabIndex,
+                  onTabChanged: _onTabChanged,
+                  tabs: _filterTabs,
+                ),
+                SizedBox(height: 1.h),
+                Expanded(
+                  child: _buildBookingsList(),
+                ),
+              ],
             ),
-            SizedBox(height: 1.h),
-            Expanded(
-              child: _buildBookingsList(),
-            ),
-          ],
-        ),
+          ),
       ),
     );
   }
