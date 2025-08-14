@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hotel_booking/core/utils/constants/colors.dart';
+import 'package:hotel_booking/features/bookings_screen/bookings_screen.dart';
 import 'package:hotel_booking/features/chats/Chats_feature.dart';
 import 'package:hotel_booking/routes/pages.dart';
 
@@ -150,7 +151,7 @@ class _NavigationScreenState extends State<NavigationScreen>
 
         animatedPage(ChatListScreen()), // Chat
         animatedPage(FavouriteScreen()), // Nearby
-        animatedPage(Container()), // Book
+        animatedPage(BookingsScreen()), // Book
         animatedPage(
           ProfileScreen()
         ),
