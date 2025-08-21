@@ -5,7 +5,8 @@ import 'package:hotel_booking/features/profile/screens/ParrainageScreen.dart';
 import 'package:hotel_booking/features/profile/screens/ProfileInfoScreen.dart';
 import 'package:hotel_booking/features/profile/screens/SettingsScreen.dart';
 import 'package:hotel_booking/features/profile/widgets/MenuItem.dart';
-
+import 'package:sizer/sizer.dart';
+import '../../core/app_export.dart';
 import '../../widgets/Screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -15,6 +16,42 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        title: Text(
+          "Profil",
+          style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
+            fontWeight: FontWeight.w600,
+            color: AppTheme.textPrimary,
+          ),
+        ),
+        actions: [
+          Stack(
+            children: [
+              const CircleAvatar(
+                backgroundColor: Color(0xFFF1F1F1),
+                radius: 20,
+                child: Icon(Icons.notifications_none, color: Colors.black54, size: 22),
+              ),
+              Positioned(
+                top: 6,
+                right: 6,
+                child: Container(
+                  height: 8,
+                  width: 8,
+                  decoration: const BoxDecoration(
+                    color: Colors.red,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(width: 2.w),
+        ],
+      ),
       body: Screen(
           body: SafeArea(
             child: Column(
@@ -25,37 +62,6 @@ class ProfileScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Top bar
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              "Profil",
-                              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-                            ),
-                            Stack(
-                              children: [
-                                const CircleAvatar(
-                                  backgroundColor: Color(0xFFF1F1F1),
-                                  radius: 20,
-                                  child: Icon(Icons.notifications_none, color: Colors.black54, size: 22),
-                                ),
-                                Positioned(
-                                  top: 6,
-                                  right: 6,
-                                  child: Container(
-                                    height: 8,
-                                    width: 8,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.red,
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
                         const SizedBox(height: 20),
 
                         // Profil card

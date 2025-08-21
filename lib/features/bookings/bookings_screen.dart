@@ -73,7 +73,7 @@ class _BookingsScreenState extends State<BookingsScreen>
       "id": 4,
       "propertyName": "Leon Hotel",
       "image":CustomImageAssets.hotel4,
-        "location": "Gombe, Kinshasa",
+      "location": "Gombe, Kinshasa",
       "checkInDate": "06 sept. 2025",
       "checkOutDate": "07 sept. 2025",
       "guestCount": 1,
@@ -104,18 +104,18 @@ class _BookingsScreenState extends State<BookingsScreen>
       case 0: // Upcoming
         return ((_allBookings as List)
             .where((dynamic booking) =>
-                (booking as Map<String, dynamic>)['status'] == 'confirmed' ||
-                (booking)['status'] == 'pending')
+        (booking as Map<String, dynamic>)['status'] == 'confirmed' ||
+            (booking)['status'] == 'pending')
             .toList() as List<Map<String, dynamic>>);
       case 1: // Past
         return ((_allBookings as List)
             .where((dynamic booking) =>
-                (booking as Map<String, dynamic>)['status'] == 'completed')
+        (booking as Map<String, dynamic>)['status'] == 'completed')
             .toList() as List<Map<String, dynamic>>);
       case 2: // Cancelled
         return ((_allBookings as List)
             .where((dynamic booking) =>
-                (booking as Map<String, dynamic>)['status'] == 'cancelled')
+        (booking as Map<String, dynamic>)['status'] == 'cancelled')
             .toList() as List<Map<String, dynamic>>);
       default:
         return [];
@@ -126,7 +126,7 @@ class _BookingsScreenState extends State<BookingsScreen>
   {
     return ((_allBookings as List)
         .where((dynamic booking) =>
-            (booking as Map<String, dynamic>)['status'] == 'pending')
+    (booking as Map<String, dynamic>)['status'] == 'pending')
         .length);
   }
 
@@ -161,23 +161,23 @@ class _BookingsScreenState extends State<BookingsScreen>
         ],
       ),
       body:Screen(
-          body:  RefreshIndicator(
-            onRefresh: _handleRefresh,
-            child: Column(
-              children: [
-                SizedBox(height: 2.h),
-                BookingFilterTabsWidget(
-                  selectedIndex: _selectedTabIndex,
-                  onTabChanged: _onTabChanged,
-                  tabs: _filterTabs,
-                ),
-                SizedBox(height: 1.h),
-                Expanded(
-                  child: _buildBookingsList(),
-                ),
-              ],
-            ),
+        body:  RefreshIndicator(
+          onRefresh: _handleRefresh,
+          child: Column(
+            children: [
+              SizedBox(height: 2.h),
+              BookingFilterTabsWidget(
+                selectedIndex: _selectedTabIndex,
+                onTabChanged: _onTabChanged,
+                tabs: _filterTabs,
+              ),
+              SizedBox(height: 1.h),
+              Expanded(
+                child: _buildBookingsList(),
+              ),
+            ],
           ),
+        ),
       ),
     );
   }
@@ -221,7 +221,7 @@ class _BookingsScreenState extends State<BookingsScreen>
       case 1: // Passée
         title = 'Aucune reservation';
         subtitle =
-            "Vous n'avez aucune reservation passée !";
+        "Vous n'avez aucune reservation passée !";
         break;
       case 2: // Annulée
         title = 'Aucune reservation';
@@ -395,7 +395,7 @@ class _BookingsScreenState extends State<BookingsScreen>
       builder: (context) => AlertDialog(
         title: Text('Contacter le Host'),
         content:
-            Text('Contacter ${booking['hostName']} au ${booking['hostPhone']}'),
+        Text('Contacter ${booking['hostName']} au ${booking['hostPhone']}'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
