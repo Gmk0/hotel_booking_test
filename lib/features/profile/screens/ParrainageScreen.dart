@@ -32,7 +32,6 @@ class ParrainageScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
-              // Image Illustration (replace with your asset)
               Image.asset(
                 "assets/logo/logo_new.PNG",
                 height: 180,
