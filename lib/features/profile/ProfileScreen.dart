@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/features/profile/screens/ConfidentialiteScreen.dart';
 import 'package:hotel_booking/features/profile/screens/ObtenirAideScreen.dart';
+import 'package:hotel_booking/features/profile/screens/ParrainageScreen.dart';
+import 'package:hotel_booking/features/profile/screens/ProfileInfoScreen.dart';
 import 'package:hotel_booking/features/profile/screens/SettingsScreen.dart';
 import 'package:hotel_booking/features/profile/widgets/MenuItem.dart';
 
@@ -151,14 +154,14 @@ class ProfileScreen extends StatelessWidget {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => ObtenirAideScreen()));
                         },),
                         MenuItem(icon: Icons.person_outline, title: "Voir le profil",onClick: (){
-
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileInfoScreen()));
                         },),
                         MenuItem(icon: Icons.pan_tool_alt_outlined, title: "Confidentialité",onClick: (){
-
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ConfidentialiteScreen()));
                         },),
                         const Divider(height: 24, thickness: 1, color: Color(0xFFE0E0E0)),
                         MenuItem(icon: Icons.group_outlined, title: "Parrainer un hôte",onClick: (){
-
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ParrainageScreen()));
                         },),
                         MenuItem(icon: Icons.group_add_outlined, title: "Trouver un co-hôte",onClick: (){
 
