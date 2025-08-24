@@ -8,6 +8,8 @@ import 'package:hotel_booking/features/home/widgets/feature_item.dart';
 import 'package:hotel_booking/features/services/view/services_view.dart';
 import 'package:hotel_booking/images.dart';
 
+import '../../../widgets/HeaderIcon.dart';
+
 class CongoBnbHomePage extends StatelessWidget {
   const CongoBnbHomePage({super.key});
 
@@ -93,14 +95,13 @@ class CongoBnbHomePage extends StatelessWidget {
                     bottom: 3,
                     child: Container(
                       padding: EdgeInsets.all(10),
-                      // color: Colors.red,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           spacing: 4,
                           children: [
-                            _HeaderIcon(
+                            HeaderIcon(
                               icon: Icons.bed,
                               label: 'Hebergements',
                               onTap: () {
@@ -112,7 +113,7 @@ class CongoBnbHomePage extends StatelessWidget {
                                 );
                               },
                             ),
-                            _HeaderIcon(
+                            HeaderIcon(
                               icon: Icons.holiday_village,
                               label: 'Spaces',
                               onTap: () {
@@ -124,7 +125,7 @@ class CongoBnbHomePage extends StatelessWidget {
                                 );
                               },
                             ),
-                            _HeaderIcon(
+                            HeaderIcon(
                               icon: Icons.supervised_user_circle,
                               label: 'Services',
                               onTap: () {
@@ -329,51 +330,4 @@ class CongoBnbHomePage extends StatelessWidget {
   }
 }
 
-class _HeaderIcon extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final GestureTapCallback? onTap;
 
-  const _HeaderIcon({
-    required this.icon,
-    required this.label,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const darkGreen = Color.fromARGB(255, 0, 26, 17);
-    const gold = Color(0xFFD4A63D);
-
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 100,
-        height: 150,
-        decoration: BoxDecoration(
-          color: darkGreen,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, color: gold, size: 40),
-            const SizedBox(height: 8),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Text(
-                label,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
