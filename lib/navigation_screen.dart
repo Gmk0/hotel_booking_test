@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hotel_booking/core/utils/constants/colors.dart';
 import 'package:hotel_booking/features/chats/Chats_feature.dart';
+import 'package:hotel_booking/features/hote/hote_menu_screen.dart';
 import 'package:hotel_booking/routes/pages.dart';
 
 import 'features/bookings/bookings_screen.dart';
@@ -151,7 +152,8 @@ class _NavigationScreenState extends State<NavigationScreen>
 
         animatedPage(ChatListScreen()), // Chat
         animatedPage(FavouriteScreen()), // Nearby
-        animatedPage(BookingsScreen()), // Book
+        //animatedPage(BookingsScreen()), // Book
+        animatedPage(HoteMenuScreen()), // Book
         animatedPage(
           ProfileScreen()
         ),
@@ -159,7 +161,8 @@ class _NavigationScreenState extends State<NavigationScreen>
     );
   }
 
-  Widget getBottomBar() {
+  Widget getBottomBar()
+  {
     return Container(
       height: 70,
       decoration: BoxDecoration(

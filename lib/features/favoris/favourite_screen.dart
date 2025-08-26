@@ -264,9 +264,8 @@ class _FavouriteScreenState extends State<FavouriteScreen>
       automaticallyImplyLeading: false,
       title: Text(
         'Mes favoris',
-        style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
-          fontWeight: FontWeight.w600,
-          color: AppTheme.textPrimary,
+        style: TextStyle(
+          fontWeight: FontWeight.w700,
         ),
       ),
       actions: [
