@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:hotel_booking/features/hote/widgets/annonce_options.dart';
 import 'package:hotel_booking/features/profile/widgets/MenuItem.dart';
 import 'package:hotel_booking/widgets/Screen.dart';
 
@@ -6,11 +8,14 @@ import '../../widgets/circle_icon.dart';
 
 class HoteMenuScreen extends StatelessWidget
 {
-  const HoteMenuScreen({super.key});
+  late BuildContext context;
+
+  HoteMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context)
   {
+    this.context = context;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -80,7 +85,9 @@ class HoteMenuScreen extends StatelessWidget
                 MenuItem(
                   icon: Icons.add_rounded,
                   title: 'Créer une nouvelle annonce',
-                  onClick: () {},
+                  onClick: () {
+                    _showOptions();
+                  },
                 ),
 
                 const SizedBox(height: 20),
@@ -90,6 +97,22 @@ class HoteMenuScreen extends StatelessWidget
       ),
     );
   }
+
+  void _showOptions()
+  {
+    HapticFeedback.lightImpact();
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.white,
+      builder: (context) => _annonceOptions(),
+    );
+  }
+}
+
+Widget _annonceOptions()
+{
+  return AnnonceOptionScreen();
 }
 
 class _RevenueCard extends StatelessWidget
@@ -152,7 +175,8 @@ class _HighlightsCard extends StatelessWidget {
   }
 }
 
-class _CardShell extends StatelessWidget {
+class _CardShell extends StatelessWidget
+{
   const _CardShell({required this.child});
   final Widget child;
 
@@ -180,7 +204,8 @@ class _CardShell extends StatelessWidget {
 /**
  * Floating btn.
  */
-class _FloatingBtn extends StatelessWidget {
+class _FloatingBtn extends StatelessWidget
+{
   @override
   Widget build(BuildContext context)
   {
