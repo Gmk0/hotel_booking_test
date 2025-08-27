@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hotel_booking/features/bookings/screens/ServiceDetailsScreen.dart';
 import 'package:sizer/sizer.dart';
 
 class Servicebookingcard extends StatelessWidget
@@ -113,7 +114,8 @@ class Servicebookingcard extends StatelessWidget
           ],
         ),
         onTap: (){
-          _viewServiceBookingDetails();
+          //_viewServiceBookingDetails();
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceDetailsScreen()));
         },
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/features/hote/hote_menu_screen.dart';
 import 'package:hotel_booking/features/profile/screens/ConfidentialiteScreen.dart';
 import 'package:hotel_booking/features/profile/screens/ObtenirAideScreen.dart';
 import 'package:hotel_booking/features/profile/screens/ParrainageScreen.dart';
@@ -174,6 +175,9 @@ class ProfileScreen extends StatelessWidget {
                         },),
                         MenuItem(icon: Icons.menu_book_outlined, title: "Juridique",onClick: (){
 
+                        },),
+                        MenuItem(icon: Icons.info_outline, title: "Menu Hote",onClick: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => HoteMenuScreen()));
                         },),
                         MenuItem(icon: Icons.logout, title: "Déconnexion",onClick: (){
 

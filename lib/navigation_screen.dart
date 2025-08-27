@@ -153,8 +153,7 @@ class _NavigationScreenState extends State<NavigationScreen>
 
         animatedPage(ChatListScreen()), // Chat
         animatedPage(FavouriteScreen()), // Nearby
-        //animatedPage(BookingsScreen()), // Book
-        animatedPage(HoteMenuScreen()), // Book
+        animatedPage(BookingsScreen()), // Book
         animatedPage(
           ProfileScreen()
         ),

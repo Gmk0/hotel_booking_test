@@ -41,6 +41,8 @@ class AppTheme {
       elevatedButtonTheme: CustomElevatedButtonTheme.darkElevatedButtonTheme,
       outlinedButtonTheme: OutlineButtomThemeC.darkOutlinedButtonTheme,
       inputDecorationTheme: TextFieldThemeC.darkInputDecorationTheme);
+
+  static var textPrimary;
 }
 
 class AppColors {

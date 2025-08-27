@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_export.dart';
+import 'package:hotel_booking/features/hote/screens/publish_service_screen.dart';
 
 class AnnonceOptionScreen extends StatefulWidget
 {
@@ -13,9 +14,9 @@ class _AnnonceOptionScreenState extends State<AnnonceOptionScreen> {
   String? _selected;
 
   final List<Map<String, dynamic>> _options = [
-    {"label": "Logement", "emoji": "🏠"},
-    {"label": "Expérience", "emoji": "🎈"},
-    {"label": "Service", "emoji": "🛎️"},
+    {"label": "Logement", "icon":Icons.home_outlined},
+    {"label": "Expérience", "icon":Icons.account_balance_outlined},
+    {"label": "Service", "icon":Icons.cleaning_services},
   ];
 
   @override
@@ -39,7 +40,7 @@ class _AnnonceOptionScreenState extends State<AnnonceOptionScreen> {
 
           const SizedBox(height: 10),
 
-          // Title
+          // Titre
           const Text(
             "Que souhaitez-vous proposer ?",
             textAlign: TextAlign.center,
@@ -83,10 +84,10 @@ class _AnnonceOptionScreenState extends State<AnnonceOptionScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    Text(
-                      opt["emoji"],
-                      style: const TextStyle(fontSize: 28),
-                    ),
+                    Icon(opt['icon'],
+                      color: Colors.grey,
+                      size: 20,
+                    )
                   ],
                 ),
               ),
@@ -106,7 +107,18 @@ class _AnnonceOptionScreenState extends State<AnnonceOptionScreen> {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              onPressed: _selected == null ? null : () {},
+              onPressed: _selected == null ? null : () {
+
+                switch(_selected){
+                  case 'Logement': break;
+                  case 'Expérience' : break;
+                  case 'Service' : 
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PublishServiceScreen()));
+                    break;
+                  default :break;
+                }
+
+              },
               child: const Text(
                 "Suivant",
                 style: TextStyle(color: Colors.white, fontSize: 16),
