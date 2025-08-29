@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_export.dart';
+import 'package:hotel_booking/features/hote/screens/publish_service/service_info_step.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -110,7 +111,7 @@ class _PublishServiceScreenState extends State<PublishServiceScreen> {
       case 0:
         return _buildCategoriesStep();
       case 1:
-        return _empty();
+        return ServiceInfoStep();
       case 2:
         return _empty();
       case 3:
