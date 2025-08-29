@@ -1,10 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/widgets/custom_image_picker.dart';
 import 'package:hotel_booking/widgets/custom_select_field.dart';
 import 'package:hotel_booking/widgets/custom_text_field.dart';
 
-class ServiceInfoStep extends StatelessWidget {
-  const ServiceInfoStep({Key? key}) : super(key: key);
-
+class ServiceOffreStep extends StatelessWidget
+{
   @override
   Widget build(BuildContext context)
   {
@@ -17,7 +18,7 @@ class ServiceInfoStep extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Informations principales',
+              'Créer une offre',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -25,16 +26,12 @@ class ServiceInfoStep extends StatelessWidget {
             ),
             SizedBox(height: 30),
 
-            // Nom du service
-            CustomTextField(label: "Nom du service"),
+            // Nom de l'offre
+            CustomTextField(label: "Nom de l'offre"),
             // Description détaillée
-            CustomTextField(label: "Description détaillée", maxLines: 3),
+            CustomTextField(label: "Prix (USD/CDF)",),
 
-            // Type de service
-            CustomSelectField(label: "Type de service"),
-
-            // Durée moyenne
-            CustomTextField(label: "Durée moyenne", hintText: "ex. 30 min, 2 h, 1 jour",),
+            CustomSelectField(label: "Durée"),
 
             // Button
             SizedBox(
@@ -49,7 +46,7 @@ class ServiceInfoStep extends StatelessWidget {
                   ),
                 ),
                 child: const Text(
-                  'Continuer',
+                  'Ajouter une offre',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -63,4 +60,5 @@ class ServiceInfoStep extends StatelessWidget {
       ),
     );
   }
+
 }

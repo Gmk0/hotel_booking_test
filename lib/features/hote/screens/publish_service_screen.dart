@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_export.dart';
 import 'package:hotel_booking/features/hote/screens/publish_service/service_info_step.dart';
+import 'package:hotel_booking/features/hote/screens/publish_service/service_offre_step.dart';
+import 'package:hotel_booking/widgets/custom_image_picker.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -108,12 +110,12 @@ class _PublishServiceScreenState extends State<PublishServiceScreen> {
   /// Step
   Widget _getStepContent(int step) {
     switch (step) {
-      case 0:
+      case 0: /** categorie step */
         return _buildCategoriesStep();
-      case 1:
+      case 1: /** info step */
         return ServiceInfoStep();
-      case 2:
-        return _empty();
+      case 2: /** offre step */
+        return ServiceOffreStep();
       case 3:
         return _empty();
       case 4:
@@ -188,68 +190,9 @@ class _PublishServiceScreenState extends State<PublishServiceScreen> {
   }
 
   /// STEP 5: Photos upload
-  Widget _buildPhotosStep() {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("Ajouter quelques photos",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-          SizedBox(height: 20),
-          Expanded(
-            child: GridView.builder(
-              itemCount: _images.length + 1, // +1 pour le button d'ajout
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-              ),
-              itemBuilder: (context, index) {
-                if (index == _images.length) {
-                  return GestureDetector(
-                    onTap: _pickImage,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Icon(Icons.add_a_photo, size: 40, color: Colors.grey),
-                    ),
-                  );
-                } else {
-                  return Stack(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Image.file(
-                          _images[index],
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: double.infinity,
-                        ),
-                      ),
-                      Positioned(
-                        top: 5,
-                        right: 5,
-                        child: GestureDetector(
-                          onTap: () => setState(() => _images.removeAt(index)),
-                          child: CircleAvatar(
-                            radius: 14,
-                            backgroundColor: Colors.black54,
-                            child: Icon(Icons.close, color: Colors.white, size: 16),
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
-                }
-              },
-            ),
-          ),
-        ],
-      ),
-    );
+  Widget _buildPhotosStep()
+  {
+    return CustomImagePicker(sectionLabel: "Ajouter quelques photos",mutipleUploads: true,);
   }
 
   Widget _empty()
