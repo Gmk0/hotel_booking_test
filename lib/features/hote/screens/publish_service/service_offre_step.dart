@@ -20,7 +20,7 @@ class ServiceOffreStep extends StatelessWidget
             const Text(
               'Créer une offre',
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 35,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -28,9 +28,9 @@ class ServiceOffreStep extends StatelessWidget
 
             // Nom de l'offre
             CustomTextField(label: "Nom de l'offre"),
-            // Description détaillée
+            // Prix
             CustomTextField(label: "Prix (USD/CDF)",),
-
+            //Durée
             CustomSelectField(label: "Durée"),
 
             // Button
