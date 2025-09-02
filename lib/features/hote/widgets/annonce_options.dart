@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_export.dart';
+import 'package:hotel_booking/features/hote/screens/publish_espace_screen.dart';
 import 'package:hotel_booking/features/hote/screens/publish_service_screen.dart';
 
 class AnnonceOptionScreen extends StatefulWidget
@@ -110,7 +111,9 @@ class _AnnonceOptionScreenState extends State<AnnonceOptionScreen> {
               onPressed: _selected == null ? null : () {
 
                 switch(_selected){
-                  case 'Logement': break;
+                  case 'Logement':
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PublishEspaceScreen()));
+                    break;
                   case 'Expérience' : break;
                   case 'Service' : 
                     Navigator.push(context, MaterialPageRoute(builder: (context) => PublishServiceScreen()));

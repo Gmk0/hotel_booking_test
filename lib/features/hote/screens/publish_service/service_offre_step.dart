@@ -18,7 +18,7 @@ class ServiceOffreStep extends StatelessWidget
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Créer une offre',
+              'Tarification & Offre',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -33,7 +33,6 @@ class ServiceOffreStep extends StatelessWidget
             //Durée
             CustomSelectField(label: "Durée"),
 
-            // Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

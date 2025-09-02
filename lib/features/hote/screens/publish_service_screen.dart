@@ -1,39 +1,28 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_export.dart';
+import 'package:hotel_booking/features/hote/screens/publish_service/service_conditions_step.dart';
+import 'package:hotel_booking/features/hote/screens/publish_service/service_experiences_step.dart';
+import 'package:hotel_booking/features/hote/screens/publish_service/service_horaire_step.dart';
 import 'package:hotel_booking/features/hote/screens/publish_service/service_info_step.dart';
 import 'package:hotel_booking/features/hote/screens/publish_service/service_offre_step.dart';
+import 'package:hotel_booking/features/hote/screens/publish_service/verification_step.dart';
 import 'package:hotel_booking/widgets/custom_image_picker.dart';
 import 'package:im_stepper/stepper.dart';
-import 'package:image_picker/image_picker.dart';
 
-class PublishServiceScreen extends StatefulWidget {
+class PublishServiceScreen extends StatefulWidget
+{
   @override
   _PublishServiceScreenState createState() => _PublishServiceScreenState();
 }
 
-class _PublishServiceScreenState extends State<PublishServiceScreen> {
+class _PublishServiceScreenState extends State<PublishServiceScreen>
+{
   int activeStep = 0;
-  int upperBound = 4; // total steps
+  int upperBound = 7; // total steps
 
   // Form data
   String? selectedCategory;
-
-  // Images
-  final List<File> _images = [];
-  final picker = ImagePicker();
-
-  /**
-   * Selection image.
-   */
-  Future<void> _pickImage() async
-  {
-    final picked = await picker.pickImage(source: ImageSource.gallery);
-    if (picked != null)
-    {
-      setState(() => _images.add(File(picked.path)));
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +36,9 @@ class _PublishServiceScreenState extends State<PublishServiceScreen> {
       ),
       body: Column(
         children: [
-          SizedBox(height: 20),
-          DotStepper(
+          /** caché parce que ce n'est beau à voir */
+          Visibility(
+            child: DotStepper(
             activeStep: activeStep,
             dotCount: upperBound + 1,
             shape: Shape.pipe,
@@ -56,7 +46,8 @@ class _PublishServiceScreenState extends State<PublishServiceScreen> {
             onDotTapped: (index) => setState(() => activeStep = index),
             tappingEnabled: false,
           ),
-          SizedBox(height: 20),
+            visible: false,
+          ),
           Expanded(child: _getStepContent(activeStep)),
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -107,7 +98,7 @@ class _PublishServiceScreenState extends State<PublishServiceScreen> {
     );
   }
 
-  /// Step
+  /// Steps
   Widget _getStepContent(int step) {
     switch (step) {
       case 0: /** categorie step */
@@ -116,10 +107,16 @@ class _PublishServiceScreenState extends State<PublishServiceScreen> {
         return ServiceInfoStep();
       case 2: /** offre step */
         return ServiceOffreStep();
-      case 3:
-        return _empty();
-      case 4:
+      case 3: /** experience step */
+        return ServiceExperienceStep();
+      case 4: /** images upload step */
         return _buildPhotosStep();
+      case 5 :
+        return HoraireStep();
+      case 6 :
+              return ConditionsStep();
+      case 7 :
+        return VerificationStep();
       default:
         return Container();
     }
@@ -193,13 +190,6 @@ class _PublishServiceScreenState extends State<PublishServiceScreen> {
   Widget _buildPhotosStep()
   {
     return CustomImagePicker(sectionLabel: "Ajouter quelques photos",mutipleUploads: true,);
-  }
-
-  Widget _empty()
-  {
-    return Center(
-      child: Text("Contenu du step..."),
-    );
   }
 
 }

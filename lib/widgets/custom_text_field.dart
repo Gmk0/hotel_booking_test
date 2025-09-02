@@ -18,7 +18,12 @@ class CustomTextField extends StatelessWidget
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label),
+          Text(label,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
           const SizedBox(height: 8),
           TextField(
             maxLines: maxLines,
@@ -26,7 +31,7 @@ class CustomTextField extends StatelessWidget
               hintText: hintText,
               border: OutlineInputBorder(borderRadius: borderRadius),
               contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 12, vertical: 16),
+                  horizontal: 12, vertical: 14),
             ),
           ),
           SizedBox(height: spacing)],
